@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { config } from '@/main'
 
-import { ref, onBeforeUnmount, watch } from 'vue'
+import { ref, onBeforeUnmount, watch, reactive } from 'vue'
 //import { ElNotification } from 'element-plus'
 const strNameList = ref(config.data.nameList.replace(/,/g, '\n'))
 const arrayNameList = ref(config.parseNameList())
 
 const showInputStudentCountDialog = ref(false)
 const studentCount = ref(0)
-const darkMode = ref(config.data.darkMode)
+const darkMode = reactive(config.data.darkMode)
 const layoutMode = ref(config.data.layoutMode)
 watch(strNameList, () => {
   arrayNameList.value = config.parseNameList()
