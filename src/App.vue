@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import { useDark } from '@vueuse/core'
-import { reloadAssistant } from '@/main'
 const isDark = useDark()
 </script>
 
@@ -32,8 +31,8 @@ const isDark = useDark()
         </el-menu-item>
       </el-menu>
     </el-header>
-
-    <el-main> <RouterView :key="reloadAssistant" /> </el-main>
+    :key
+    <el-main> <RouterView /> </el-main>
   </el-container>
 </template>
 <style>
