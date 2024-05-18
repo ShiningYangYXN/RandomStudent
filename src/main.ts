@@ -15,7 +15,7 @@ export const config = reactive({
   data: {
     nameList: '请前往设置页面配置名单',
     darkMode: isDark,
-    layoutMode: 'vertical',
+    layoutMode: 'horizontal',
     enableBlur: false
   },
   parseNameList: () => {
