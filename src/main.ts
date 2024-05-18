@@ -36,7 +36,7 @@ export const config = reactive({
   },
   reset: () => {
     localStorage.removeItem('configData')
-    document.location.href = '/'
+    document.location.href = app.config.globalProperties.$router.resolve('/').href
   }
 })
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
