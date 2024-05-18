@@ -18,7 +18,7 @@ import { version } from '@/../package.json'
   <el-row justify="center">
     <el-button
       type="primary"
-      @click="open('https://github.com/ShiningYangYXN/RandomStudent', '_blank')"
+      href="https://github.com/ShiningYangYXN/RandomStudent"
       style="height: 10vh; font-size: 5vh"
       >GitHub</el-button
     >
