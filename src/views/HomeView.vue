@@ -56,8 +56,8 @@ function Stop() {
             class="box-card"
             :body-style="
               config.data.layoutMode === 'vertical'
-                ? 'font-size:10vh; text-align: center'
-                : 'font-size:30vh; text-align: center'
+                ? 'font-size:5vw; text-align: center'
+                : 'font-size:10vw; text-align: center'
             "
           >
             <span>{{ item }}</span></el-card
