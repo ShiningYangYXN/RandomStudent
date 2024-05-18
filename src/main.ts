@@ -11,6 +11,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 
 const app = createApp(App)
 const isDark = useDark()
+let reloadAssistant = false
 export const config = reactive({
   data: {
     nameList: '请前往设置页面配置名单',
@@ -36,7 +37,7 @@ export const config = reactive({
   },
   reset: () => {
     localStorage.removeItem('configData')
-    document.location.reload()
+    reloadAssistant = !reloadAssistant
   }
 })
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
