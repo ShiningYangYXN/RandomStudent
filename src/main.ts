@@ -36,8 +36,7 @@ export const config = reactive({
   },
   reset: () => {
     localStorage.removeItem('configData')
-    app.unmount()
-    app.mount('#app')
+    document.location.reload()
   }
 })
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
