@@ -1,6 +1,6 @@
 import './assets/main.css'
 
-import { createApp, reactive, ref, watch } from 'vue'
+import { createApp, reactive, watch } from 'vue'
 import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
@@ -11,7 +11,6 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 
 const app = createApp(App)
 const isDark = useDark()
-export const reloadAssistant = ref(0)
 export const config = reactive({
   data: {
     nameList: '请前往设置页面配置名单',
@@ -37,7 +36,7 @@ export const config = reactive({
   },
   reset: () => {
     localStorage.removeItem('configData')
-    reloadAssistant.value++
+    document.location.href = '/'
   }
 })
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
