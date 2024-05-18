@@ -50,6 +50,7 @@ function Stop() {
         :interval="100"
         :autoplay="running"
         indicator-position="none"
+        pause-on-hover="false"
         :motion-blur="config.data.enableBlur"
       >
         <el-carousel-item v-for="item in nameList" :key="nameList.indexOf(item)">
