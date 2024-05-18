@@ -43,7 +43,7 @@ function Stop() {
   <el-container>
     <el-main>
       <el-carousel
-        height="60vh"
+        height="50vh"
         arrow="never"
         :direction="config.data.layoutMode"
         type="card"
