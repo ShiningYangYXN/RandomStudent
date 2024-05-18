@@ -13,7 +13,7 @@ const isDark = useDark()
     <el-header>
       <el-menu :default-active="$route.path" router mode="horizontal">
         <el-menu-item>
-          <img src="@/assets/logo.svg" style="height: 2vw; width: 2vw" />
+          <img src="@/assets/logo.svg" style="height: 20px; width: 20px" />
           <span>&emsp;学生随机抽选工具</span>
         </el-menu-item>
         <el-menu-item index="/">
