@@ -16,11 +16,8 @@ import { version } from '@/../package.json'
   </el-row>
   <br />
   <el-row justify="center">
-    <el-button
-      type="primary"
-      href="https://github.com/ShiningYangYXN/RandomStudent"
-      style="height: 10vh; font-size: 5vh"
-      >GitHub</el-button
+    <el-button type="primary" style="height: 10vh; font-size: 5vh"
+      ><el-link href="https://github.com/ShiningYangYXN/RandomStudent">GitHub</el-link></el-button
     >
   </el-row>
 </template>
