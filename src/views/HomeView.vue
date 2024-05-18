@@ -66,8 +66,9 @@ function Stop() {
         </el-carousel-item>
       </el-carousel>
       <br />
-      <el-row justify="center">
-        <el-button
+      <el-row justify="center" class="btn-container">
+		<Transition name="slide-up">
+      <el-button
           type="primary"
           @click="Start()"
           v-if="!running"
@@ -77,6 +78,8 @@ function Stop() {
         <el-button type="danger" @click="Stop()" v-else style="font-size: 2vw; height: 10vh"
           ><el-icon><VideoPause /></el-icon>停止</el-button
         >
+    </Transition>
+        
       </el-row>
     </el-main>
   </el-container>
