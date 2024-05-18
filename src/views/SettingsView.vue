@@ -95,7 +95,7 @@ function GenerateNumberOnlyNameList(count: number) {
           <el-icon><Operation /></el-icon>
           <span>界面选项</span>
         </template>
-        <el-form label-position="top" label-width="80px">
+        <el-form label-position="top">
           <el-form-item label="暗黑模式">
             <el-switch v-model="darkMode"></el-switch>
           </el-form-item>
