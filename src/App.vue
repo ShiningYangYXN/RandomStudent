@@ -38,4 +38,7 @@ const isDark = useDark()
 .flex-grow {
   flex-grow: 1;
 }
+html {
+  font-size: 0;
+}
 </style>
