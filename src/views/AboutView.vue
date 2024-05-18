@@ -17,7 +17,12 @@ import { version } from '@/../package.json'
   <br />
   <el-row justify="center">
     <el-button type="primary" style="height: 10vh; font-size: 5vh"
-      ><el-link href="https://github.com/ShiningYangYXN/RandomStudent">GitHub</el-link></el-button
+      ><el-link
+        href="https://github.com/ShiningYangYXN/RandomStudent"
+        target="_blank"
+        style="height: 10vh; font-size: 5vh"
+        >GitHub</el-link
+      ></el-button
     >
   </el-row>
 </template>
