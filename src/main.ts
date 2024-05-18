@@ -55,17 +55,19 @@ config.data = JSON.parse(<string>localStorage.getItem('configData'))
 watch(config.data, () => {
   try {
     config.update()
+    //@ts-expect-error
     ElNotification({
       title: '保存成功',
       message: '设置已成功保存',
       type: 'success'
-    }) //@ts-ignore
+    })
   } catch (e) {
+    //@ts-expect-error
     ElNotification({
       title: '保存失败',
       message: '设置保存失败\n' + e,
       type: 'error'
-    }) //@ts-ignore
+    })
   }
 })
 
