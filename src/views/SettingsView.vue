@@ -9,12 +9,14 @@ const arrayNameList = ref(config.parseNameList())
 const showInputStudentCountDialog = ref(false)
 const studentCount = ref(0)
 const layoutMode = ref(config.data.layoutMode)
+const enableBlur = ref(config.data.enableBlur)
 watch(strNameList, () => {
   arrayNameList.value = config.parseNameList()
 })
 function SaveSettings() {
   config.setNameList(strNameList.value)
   config.data.layoutMode = layoutMode.value
+  config.data.enableBlur = enableBlur.value
 }
 onBeforeUnmount(SaveSettings)
 function GenerateNumberOnlyNameList(count: number) {
@@ -96,6 +98,9 @@ function GenerateNumberOnlyNameList(count: number) {
         <el-form label-position="top">
           <el-form-item label="暗黑模式">
             <el-switch v-model="config.data.darkMode"></el-switch>
+          </el-form-item>
+          <el-form-item label="启用模糊动效">
+            <el-switch v-model="enableBlur"></el-switch>
           </el-form-item>
           <el-form-item label="主界面布局">
             <el-select v-model="layoutMode"
