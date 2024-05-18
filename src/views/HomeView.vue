@@ -66,8 +66,8 @@ function Stop() {
         </el-carousel-item>
       </el-carousel>
       <br />
-      <el-row justify="center" class="btn-container">
-        <Transition name="slide-up">
+      <el-row justify="center">
+        <Transition>
           <el-button
             type="primary"
             @click="Start()"
@@ -83,25 +83,3 @@ function Stop() {
     </el-main>
   </el-container>
 </template>
-<style>
-.btn-container {
-  display: inline-block;
-  position: relative;
-  height: 1em;
-}
-
-.slide-up-enter-active,
-.slide-up-leave-active {
-  transition: all 0.25s ease-out;
-}
-
-.slide-up-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.slide-up-leave-to {
-  opacity: 0;
-  transform: translateY(-30px);
-}
-</style>
