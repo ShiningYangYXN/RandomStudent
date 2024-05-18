@@ -31,7 +31,6 @@ const isDark = useDark()
         </el-menu-item>
       </el-menu>
     </el-header>
-    :key
     <el-main> <RouterView /> </el-main>
   </el-container>
 </template>
