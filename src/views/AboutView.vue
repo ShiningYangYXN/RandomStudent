@@ -20,7 +20,7 @@ import { version } from '@/../package.json'
       ><el-link
         href="https://github.com/ShiningYangYXN/RandomStudent"
         target="_blank"
-        style="height: 10vh; font-size: 5vh"
+        style="color: white; font-size: 5vh"
         >GitHub</el-link
       ></el-button
     >
