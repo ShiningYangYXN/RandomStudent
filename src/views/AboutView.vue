@@ -15,4 +15,9 @@ import { version } from '@/../package.json'
     >
   </el-row>
   <br />
+  <el-row justify="center">
+    <el-link type="primary" href="https://github.com/ShiningYangYXN/RandomStudent" target="_blank"
+      >GitHub</el-link
+    >
+  </el-row>
 </template>
