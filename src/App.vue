@@ -8,6 +8,7 @@ const isDark = useDark()
   <el-container
     style="height: 100vh; width: 100vw"
     :style="isDark ? 'background-color: #000000' : 'background-color: #ffffff'"
+    :key="isDark"
   >
     <el-header>
       <el-menu :default-active="$route.path" router mode="horizontal">
