@@ -4,7 +4,6 @@ import { createApp, reactive, watch } from 'vue'
 import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
-import { ElNotification } from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import { useDark } from '@vueuse/core'
@@ -60,13 +59,13 @@ watch(config.data, () => {
       title: '保存成功',
       message: '设置已成功保存',
       type: 'success'
-    })
+    }) //@ts-ignore
   } catch (e) {
     ElNotification({
       title: '保存失败',
       message: '设置保存失败\n' + e,
       type: 'error'
-    })
+    }) //@ts-ignore
   }
 })
 
