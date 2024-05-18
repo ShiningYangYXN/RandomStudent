@@ -1,21 +1,19 @@
 <script lang="ts" setup>
 import { config } from '@/main'
 
-import { ref, onBeforeUnmount, watch, reactive } from 'vue'
+import { ref, onBeforeUnmount, watch } from 'vue'
 //import { ElNotification } from 'element-plus'
 const strNameList = ref(config.data.nameList.replace(/,/g, '\n'))
 const arrayNameList = ref(config.parseNameList())
 
 const showInputStudentCountDialog = ref(false)
 const studentCount = ref(0)
-const darkMode = reactive(config.data.darkMode)
 const layoutMode = ref(config.data.layoutMode)
 watch(strNameList, () => {
   arrayNameList.value = config.parseNameList()
 })
 function SaveSettings() {
   config.setNameList(strNameList.value)
-  config.data.darkMode = darkMode.value
   config.data.layoutMode = layoutMode.value
 }
 onBeforeUnmount(SaveSettings)
@@ -97,7 +95,7 @@ function GenerateNumberOnlyNameList(count: number) {
         </template>
         <el-form label-position="top">
           <el-form-item label="暗黑模式">
-            <el-switch v-model="darkMode"></el-switch>
+            <el-switch v-model="config.data.darkMode"></el-switch>
           </el-form-item>
           <el-form-item label="主界面布局">
             <el-select v-model="layoutMode"
