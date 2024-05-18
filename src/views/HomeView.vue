@@ -67,20 +67,41 @@ function Stop() {
       </el-carousel>
       <br />
       <el-row justify="center" class="btn-container">
-		<Transition name="slide-up">
-      <el-button
-          type="primary"
-          @click="Start()"
-          v-if="!running"
-          style="font-size: 2vw; height: 10vh"
-          ><el-icon><VideoPlay /></el-icon>开始</el-button
-        >
-        <el-button type="danger" @click="Stop()" v-else style="font-size: 2vw; height: 10vh"
-          ><el-icon><VideoPause /></el-icon>停止</el-button
-        >
-    </Transition>
-        
+        <Transition name="slide-up">
+          <el-button
+            type="primary"
+            @click="Start()"
+            v-if="!running"
+            style="font-size: 2vw; height: 10vh"
+            ><el-icon><VideoPlay /></el-icon>开始</el-button
+          >
+          <el-button type="danger" @click="Stop()" v-else style="font-size: 2vw; height: 10vh"
+            ><el-icon><VideoPause /></el-icon>停止</el-button
+          >
+        </Transition>
       </el-row>
     </el-main>
   </el-container>
 </template>
+<style>
+.btn-container {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+</style>
