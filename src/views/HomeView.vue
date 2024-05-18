@@ -44,6 +44,7 @@ function Stop() {
     <el-main>
       <el-carousel
         height="60vh"
+        arrow="never"
         :direction="config.data.layoutMode"
         type="card"
         :interval="100"
@@ -70,10 +71,10 @@ function Stop() {
           type="primary"
           @click="Start()"
           v-if="!running"
-          style="font-size: 5vh; height: 10vh"
+          style="font-size: 2vw; height: 10vh"
           ><el-icon><VideoPlay /></el-icon>开始</el-button
         >
-        <el-button type="danger" @click="Stop()" v-else style="font-size: 5vh; height: 10vh"
+        <el-button type="danger" @click="Stop()" v-else style="font-size: 2vw; height: 10vh"
           ><el-icon><VideoPause /></el-icon>停止</el-button
         >
       </el-row>
