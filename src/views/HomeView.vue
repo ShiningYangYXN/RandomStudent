@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { config } from '@/main'
-//const putBack = ref(config.putBack)
 const nameList = ref(config.parseNameList())
 const running = ref(false)
 function getRandomBelow(max: number) {
