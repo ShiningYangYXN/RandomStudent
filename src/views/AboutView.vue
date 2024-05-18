@@ -6,13 +6,13 @@ import { version } from '@/../package.json'
     <img src="@/assets/logo.svg" alt="logo" style="width: 30vh; height: 30vh" />
   </el-row>
   <el-row justify="center">
-    <el-text type="primary" style="font-size: 10vh; font-weight: bold; text-align: center"
+    <el-text type="primary" style="font-size: 5vw; font-weight: bold; text-align: center"
       >RandomStudent</el-text
     >
-    <el-text type="info" style="font-size: 5vh; text-align: center">{{ version }}</el-text>
+    <el-text type="info" style="font-size: 2vw; text-align: center">{{ version }}</el-text>
   </el-row>
   <el-row justify="center">
-    <el-text type="info" style="font-size: 5vh; text-align: center"
+    <el-text type="info" style="font-size: 2vw; text-align: center"
       >一款基于 Vue3 和 Element Plus 的学生随机抽选工具</el-text
     >
   </el-row>
