@@ -6,4 +6,6 @@
 
 一款基于 Vue3 和 Element Plus 的学生随机抽选工具
 
-[**在线尝试（GitHub Pages）**](https://https://shiningyangyxn.github.io/RandomStudent/)
+[**在线尝试（GitHub Pages）**](https://shiningyangyxn.github.io/RandomStudent/)
+
+[**在线尝试（Cloudflare Pages）**](https://randomstudent.pages.dev/))
