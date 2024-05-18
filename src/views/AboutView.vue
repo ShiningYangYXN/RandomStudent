@@ -3,7 +3,7 @@ import { version } from '@/../package.json'
 </script>
 <template>
   <el-row justify="center">
-    <img src="@/assets/logo.svg" alt="logo" style="width: 30vh; height: 30vh" />
+    <img src="@/assets/logo.svg" alt="logo" style="width: 15vw; height: 15vw" />
   </el-row>
   <el-row justify="center">
     <el-text type="primary" style="font-size: 5vw; font-weight: bold; text-align: center"
@@ -18,11 +18,11 @@ import { version } from '@/../package.json'
   </el-row>
   <br />
   <el-row justify="center">
-    <el-button type="primary" style="height: 10vh; font-size: 5vh"
+    <el-button type="primary" style="height: 5vw; font-size: 2vw"
       ><el-link
         href="https://github.com/ShiningYangYXN/RandomStudent"
         target="_blank"
-        style="color: white; font-size: 5vh"
+        style="color: white; font-size: 2vw"
         ><el-icon
           ><svg
             height="32"
