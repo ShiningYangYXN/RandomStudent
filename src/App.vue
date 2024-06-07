@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { useDark } from '@vueuse/core'
-const isDark = useDark()
+import { darkTheme } from '@/main'
 </script>
 
 <template>
   <el-container
-    style="height: 100vh; width: 100vw"
-    :style="isDark ? 'background-color: #000000' : 'background-color: #ffffff'"
-    :key="isDark"
+    style="height: 100%; width: 100%"
+    :style="darkTheme ? 'background-color: #000000' : 'background-color: #ffffff'"
+    :key="darkTheme"
   >
     <el-header>
       <el-menu :default-active="$route.path" router mode="horizontal">
         <el-menu-item>
-          <img src="@/assets/logo.svg" style="height: 20px; width: 20px" />
+          <img src="@/assets/logo.svg" style="height: 2rem; width: 2rem" />
           <span>&emsp;学生随机抽选工具</span>
         </el-menu-item>
         <el-menu-item index="/">
@@ -34,11 +33,8 @@ const isDark = useDark()
     <el-main> <RouterView /> </el-main>
   </el-container>
 </template>
-<style>
+<style scoped>
 .flex-grow {
   flex-grow: 1;
-}
-html {
-  font-size: 0;
 }
 </style>

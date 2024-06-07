@@ -1,6 +1,7 @@
 import './assets/main.css'
 
-import { createApp, reactive, watch } from 'vue'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import ElementPlus from 'element-plus'
@@ -10,7 +11,17 @@ import { useDark } from '@vueuse/core'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
 const app = createApp(App)
-const isDark = useDark()
+const pinia = createPinia()
+export const darkTheme = useDark()
+app.use(pinia)
+app.use(router)
+app.use(ElementPlus, {
+  locale: zhCn
+})
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
+/*
 export const config = reactive({
   data: {
     nameList: '请前往设置页面配置名单',
@@ -40,9 +51,7 @@ export const config = reactive({
     document.location.href = app.config.globalProperties.$router.resolve('/').href
   }
 })
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component)
-}
+
 if (localStorage.getItem('configData') === null) {
   localStorage.setItem('configData', JSON.stringify(config.data))
 } else {
@@ -71,10 +80,6 @@ watch(config.data, () => {
     })
   }
 })
-
-app.use(router)
-app.use(ElementPlus, {
-  locale: zhCn
-})
+*/
 
 app.mount('#app')
