@@ -23,6 +23,7 @@ jobs:
           npm -g install pnpm
           pnpm install
           pnpm run build
+          cp ./dist/index.html ./dist/404.html
 
       - name: Deploy # 部署
         uses: JamesIves/github-pages-deploy-action@v4.3.3
