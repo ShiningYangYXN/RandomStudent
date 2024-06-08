@@ -1,35 +1,21 @@
 <script lang="ts" setup>
-import { darkTheme } from '@/main'
 import { ref, watchEffect } from 'vue'
-
 import { storeToRefs } from 'pinia'
+
+import { darkTheme } from '@/main'
 import { useSettingsStore } from '@/stores/settings'
+
 const settingsStore = useSettingsStore()
 const { layoutMode, enableBlur } = storeToRefs(settingsStore)
 const strNameList = ref(settingsStore.nameListString)
-//const nameListArray = useSettings().nameListArray
-//const layoutMode = useSettings().layoutMode
-//const enableBlur = useSettings().enableBlur
 
 const showInputStudentCountDialog = ref(false)
 const studentCount = ref(0)
-/*
-watch(strNameList, () => {
-  nameListArray.value = config.parseNameList()
-})
-function SaveSettings() {
-  config.setNameList(strNameList.value)
-  config.data.layoutMode = layoutMode.value
-  config.data.enableBlur = enableBlur.value
-}
-onBeforeUnmount(SaveSettings)*/
-/*
-watchEffect(() => {
-  useSettings().setNameList(strNameList.value)
-})*/
+
 watchEffect(() => {
   settingsStore.setNameList(strNameList.value)
 })
+
 function GenerateNumberOnlyNameList(count: number) {
   let list = ''
   for (let i = 1; i <= count; i++) {
@@ -54,18 +40,23 @@ function GenerateNumberOnlyNameList(count: number) {
         "
       >
         <template #reference>
-          <el-button type="danger"
-            ><el-icon><Warning /></el-icon>重置</el-button
-          >
+          <el-button type="danger">
+            <el-icon>
+              <Warning />
+            </el-icon>
+            <span> 重置 </span>
+          </el-button>
         </template>
       </el-popconfirm>
     </el-header>
     <el-main>
-      <el-scrollbar height="65vh">
+      <el-scrollbar height="65dvh">
         <el-card class="box-card">
           <template #header>
-            <el-icon><Document /></el-icon>
-            <span>学生名单</span>
+            <el-icon>
+              <Document />
+            </el-icon>
+            <span> 学生名单 </span>
           </template>
           <el-input
             v-model="strNameList"
@@ -75,8 +66,11 @@ function GenerateNumberOnlyNameList(count: number) {
           />
           <template #footer>
             <el-button type="primary" @click="showInputStudentCountDialog = true">
-              <el-icon><DocumentAdd /></el-icon>创建纯学号名单</el-button
-            >
+              <el-icon>
+                <DocumentAdd />
+              </el-icon>
+              <span> 创建纯学号名单 </span>
+            </el-button>
 
             <el-popconfirm
               title="确定要清空吗？"
@@ -85,9 +79,12 @@ function GenerateNumberOnlyNameList(count: number) {
               @confirm="strNameList = ''"
             >
               <template #reference>
-                <el-button type="danger"
-                  >清空<el-icon><Delete /></el-icon
-                ></el-button>
+                <el-button type="danger">
+                  <span> 清空 </span>
+                  <el-icon>
+                    <Delete />
+                  </el-icon>
+                </el-button>
               </template>
             </el-popconfirm>
           </template>
@@ -98,29 +95,39 @@ function GenerateNumberOnlyNameList(count: number) {
             <el-input-number v-model="studentCount" :min="1" style="justify-self: right" />
           </el-row>
           <template #footer>
-            <el-button type="primary" @click="GenerateNumberOnlyNameList(studentCount)"
-              ><el-icon><Check /></el-icon>创建</el-button
-            >
+            <el-button type="primary" @click="GenerateNumberOnlyNameList(studentCount)">
+              <el-icon>
+                <Check />
+              </el-icon>
+              <span> 创建 </span>
+            </el-button>
           </template>
         </el-dialog>
         <br />
         <el-card class="box-card">
           <template #header>
-            <el-icon><Operation /></el-icon>
-            <span>界面选项</span>
+            <el-icon>
+              <Operation />
+            </el-icon>
+            <span> 界面选项 </span>
           </template>
           <el-form label-position="top">
             <el-form-item label="暗黑模式">
-              <el-switch v-model="darkTheme"></el-switch>
+              <el-switch
+                v-model="darkTheme"
+                active-icon="Moon"
+                inactive-icon="Sunny"
+                inline-prompt
+              />
             </el-form-item>
             <el-form-item label="启用模糊动效">
-              <el-switch v-model="enableBlur"></el-switch>
+              <el-switch v-model="enableBlur" />
             </el-form-item>
             <el-form-item label="主界面布局">
-              <el-select v-model="layoutMode"
-                ><el-option value="horizontal" label="水平">水平</el-option
-                ><el-option value="vertical" label="垂直">垂直</el-option></el-select
-              >
+              <el-select v-model="layoutMode">
+                <el-option value="horizontal" label="水平"> 水平 </el-option>
+                <el-option value="vertical" label="垂直"> 垂直 </el-option>
+              </el-select>
             </el-form-item>
           </el-form>
         </el-card>

@@ -6,11 +6,11 @@ interface settings {
   layoutMode: 'horizontal' | 'vertical'
   enableBlur: boolean
 }
-const defaultSettings: settings = Object.freeze({
+const defaultSettings: settings = {
   nameList: [],
   layoutMode: 'horizontal',
   enableBlur: false
-})
+}
 
 export const useSettingsStore = defineStore('RandomStudentSettings', {
   state: () => {

@@ -5,6 +5,9 @@ body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
+html .dark {
+  background-color: #000000;
+}
 div #app {
   width: 100dvw;
   height: 100dvh;
